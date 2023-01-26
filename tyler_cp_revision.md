@@ -1,11 +1,21 @@
-Hi Tyler. 
+Hi Tyler.
 
-Thank you very much for the time and effort you have put into these conditional pass articles. Both of the articles are well-written and easy to follow. I particularly like the list of ways to improve communication in "The Power of Communication in Programming… and Beyond". Additionally, the articles were well laid out and formatted which made reading them quite enjoyable. The accuracy of both articles is good overall, but there are a few areas that we'd like you to revisit in your "Me My(Self) and I: Looking at ‘self’ in Ruby" article before moving on. These items are outlined below:
+Thank you for your updated article on `self`. I think overall the revisions you made helped clarify the areas we originally pointed out to you. This has satisfied your Conditional Pass assignment. You may move on to the next course when you're ready. Congratulations!
 
-- In the section titled **Within the Instance Method**, the wording used to describe an instance of the `Person` class is a bit inaccurate and may lead to misinterpretation. You refer to this object as "John", but that is the value assigned to the instance variable `@name`. The `Person` object created in your example is not "John", that value is simply part of its state. It may be easier and more accurate to refer to this object as the object referenced by the local variable `person`. Please update this section to be more clear about the object you are talking about when referenced by `self` within the instance method in your example.
-- The first line of the last paragraph states that "[`self`] is used to access attributes and methods of the current context...". How do we use `self` to access attributes? Can `self` access attributes directly? What about class methods? Please update this section to clarify this point.
-- The only thing I'd like your article to include that it isn't currently is a more explicit explanation of the boundaries of where `self` references the class vs. an instance of the class. For example, where within a class does `self` reference an instance of the class, and where does it reference the class itself? Can you reference `self` anywhere other than inside an instance method or prepended to a class method definition (or within a class method)? Please include this in your revised article.
+Below is some additional feedback on the revised areas of your article:
 
-Once you've updated this article please submit the revised version here in the conversation tab.
+---
 
-Thank you, Tyler.  Let us know if you have any questions.
+> At the object level, self refers to the current instance of a class. For example, if you have a class called "Person" and you create an instance of that class called "person1", then self within the context of that instance would refer to "person1". Self within the context of the instance method would refer to the current object that is being called upon, which in this case is “person1” and assigning the name value as “John”
+
+The paragraph above does a good job describing how `self` works within an instance method. My only note is that being specific when you are referring to an instance of a class or referring to a local variable would leave less room for ambiguity. In the sentence: _"...you create an instance of that class called 'person1', then self within the context of that instance would refer to 'person1'"_ it would be more accurate to refer to `person1` as a local variable and that the instance of the class has been assigned to it. Using more specific language will ensure the reader will know precisely what you ar talking about and leave less room for misinterpretation.
+
+---
+
+> The self keyword is used to access attributes directly (instance variables) within the current context. To access an attribute using self, you simply need to prefix the attribute name with self.. For example, if you have an attribute named name, you can access it using self.name. To set the value of an attribute, you can use the assignment operator = after self.name. self.name = "John" sets the
+
+Nice explanation.
+
+---
+
+Your overall explanation of the boundaries of `self` within a class is looking good but I think a simple way of clarifying this idea is that _inside of an instance method `self` refers to an instance of the class and outside of an instance method `self` refers to the class itself_.
