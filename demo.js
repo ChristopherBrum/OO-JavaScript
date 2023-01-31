@@ -1,9 +1,13 @@
-// "use strict"
+let temperatures = [53, 86, 12, 43];
 
-// function func() {
-//   b = 1;
-// }
+function average(values) {
+  let total = 0;
+  let i;
+  for (i = values.length - 1; i >= 0; i -= 1) {
+    total += values[i];
+  }
 
-// func();
+  return total / values.length;
+}
 
-// console.log(b);
+console.log(average(temperatures));           // => 48.5
