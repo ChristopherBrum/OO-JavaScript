@@ -1,13 +1,7 @@
-let temperatures = [53, 86, 12, 43];
+// "use strict";
 
-function average(values) {
-  let total = 0;
-  let i;
-  for (i = values.length - 1; i >= 0; i -= 1) {
-    total += values[i];
-  }
+// let food = 'Burrito';
+// fo0d = 'Enchiladas'; // ReferenceError: fo0d is not defined
 
-  return total / values.length;
-}
-
-console.log(average(temperatures));           // => 48.5
+// food
+// fo0d
