@@ -1,7 +1,9 @@
-// "use strict";
+let chris = {
+  name: 'Chris',
+  nums: [1, 2],
+  sayHiTwice() {
+    this.nums.forEach(num => console.log('hello, ' + this.name));
+  },
+};
 
-// let food = 'Burrito';
-// fo0d = 'Enchiladas'; // ReferenceError: fo0d is not defined
-
-// food
-// fo0d
+chris.sayHiTwice(); // 'hello, Chris' (repeated twice)
