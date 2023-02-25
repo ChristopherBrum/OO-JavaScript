@@ -1,15 +1,19 @@
-let Foo = function() {};
-let obj = Foo.prototype;
+function neww(constructor, args) {
+  let newObject = Object.create(constructor.prototype);
+  let result = constructor.apply(newObject, args);
 
-let bar = new Foo();
-let baz = new Foo();
+  return typeof result === 'object' ? result : newObject;
+}
 
-Object.getPrototypeOf(bar) === obj;  // true
-Object.getPrototypeOf(baz) === obj;  // true
+function Person(firstName, lastName) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+}
 
-// delegation: constructor is a property of a function prototype
-bar.constructor === Foo;             // true; bar is created from Foo
-baz.constructor === Foo;             // true; baz is created from Foo
+Person.prototype.greeting = function() {
+  console.log('Hello, ' + this.firstName + ' ' + this.lastName);
+};
 
-bar instanceof Foo;                  // true; bar is an instance of Foo
-baz instanceof Foo;                  // true; baz is an instance of Foo
+let john = neww(Person, ['John', 'Doe']);
+john.greeting();          // => Hello, John Doe
+john.constructor;         // Person(firstName, lastName) {...}
