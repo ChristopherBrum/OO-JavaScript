@@ -1,19 +1,32 @@
-function neww(constructor, args) {
-  let newObject = Object.create(constructor.prototype);
-  let result = constructor.apply(newObject, args);
+// Write a function that extends an object (destination object) with contents from multiple objects (source objects).
 
-  return typeof result === 'object' ? result : newObject;
+function extend(destination) {
+  // ...
 }
 
-function Person(firstName, lastName) {
-  this.firstName = firstName;
-  this.lastName = lastName;
-}
-
-Person.prototype.greeting = function() {
-  console.log('Hello, ' + this.firstName + ' ' + this.lastName);
+let foo = {
+  a: 0,
+  b: {
+    x: 1,
+    y: 2,
+  },
 };
 
-let john = neww(Person, ['John', 'Doe']);
-john.greeting();          // => Hello, John Doe
-john.constructor;         // Person(firstName, lastName) {...}
+let joe = {
+  name: 'Joe'
+};
+
+let funcs = {
+  sayHello() {
+    console.log('Hello, ' + this.name);
+  },
+
+  sayGoodBye() {
+    console.log('Goodbye, ' + this.name);
+  },
+};
+
+let object = extend({}, foo, joe, funcs);
+
+console.log(object.b.x);          // => 1
+object.sayHello();                // => Hello, Joe

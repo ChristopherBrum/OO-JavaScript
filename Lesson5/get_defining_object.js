@@ -1,9 +1,16 @@
-function getDefiningObject(object, propKey) {
-  if (object === Object.prototype) return null;
-  if (object.hasOwnProperty(propKey)) return object;
+// Write a function that returns the object on a given object's prototype chain where a property is defined. See the example code below:
 
-  let proto = Object.getPrototypeOf(object);
-  return getDefiningObject(proto, propKey);
+function getDefiningObject(object, propKey) {
+  let currentPrototype = object;
+
+  while (currentPrototype !== null) {
+    if (currentPrototype.hasOwnProperty(propKey)) {
+      return currentPrototype;
+    }
+    currentPrototype = Object.getPrototypeOf(currentPrototype);
+  }
+
+  return null;
 }
 
 let foo = {
@@ -18,4 +25,6 @@ let qux = Object.create(baz);
 bar.c = 3;
 
 console.log(getDefiningObject(qux, 'c') === bar);     // => true
+console.log(getDefiningObject(baz, 'a') === foo);     // => true
+console.log(getDefiningObject(bar, 'b') === foo);     // => true
 console.log(getDefiningObject(qux, 'e'));             // => null
