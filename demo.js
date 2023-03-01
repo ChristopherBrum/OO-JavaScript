@@ -1,32 +1,27 @@
-// Write a function that extends an object (destination object) with contents from multiple objects (source objects).
-
-function extend(destination) {
-  // ...
+function Animal(){
+  this.offspring=[];
 }
 
-let foo = {
-  a: 0,
-  b: {
-    x: 1,
-    y: 2,
-  },
+Animal.prototype.makeBaby = function(){ 
+  var baby = new Animal();
+  if (!this.hasOwnProperty('offspring')) {
+    this.offspring = [];
+  } 
+  this.offspring.push(baby);
+  return baby;
 };
 
-let joe = {
-  name: 'Joe'
-};
+//create Cat as a sub-class of Animal
+function Cat() {
+}
 
-let funcs = {
-  sayHello() {
-    console.log('Hello, ' + this.name);
-  },
+//Inherit from Animal
+Cat.prototype = new Animal();
 
-  sayGoodBye() {
-    console.log('Goodbye, ' + this.name);
-  },
-};
+var puff = new Cat();
+puff.makeBaby();
+var colonel = new Cat();
+colonel.makeBaby();
 
-let object = extend({}, foo, joe, funcs);
-
-console.log(object.b.x);          // => 1
-object.sayHello();                // => Hello, Joe
+console.log(puff.offspring);
+console.log(colonel.offspring);
