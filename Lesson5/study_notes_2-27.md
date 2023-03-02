@@ -1,4 +1,4 @@
-# 2023-02-27 Study Notes 
+# 2023-02-27 Study Notes
 
 ```js
 // // needs an explicit 'return', JS reads the same as if it was multiple lines
