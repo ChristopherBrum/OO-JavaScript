@@ -111,4 +111,21 @@ kawasaki.giveThrottle(); // Braaaappppp
 
 ---
 
-## Helpful Methods
+## Object Property Methods
+
+Since prototypal inheritance will look up the prototype chain for a property, using `obj.prop !== undefined` is not a reliable way of testing whether a property is found on an object, since this expression will return `true` if it finds a property by that name _anywhere_ up the prototype chain. JS supplies us with two methods that can help us determine if an object contains a particular property.
+
+- [[Object.hasOwnProperty]] method tests whether a property is found on an object.
+- [[Object.getOwnPropertyNames]] method returns an array of an object's own property names.
+
+---
+
+## `Object.prototype` Methods
+
+All objects in JS inherit from `Object.prototype` and therefore inherit the methods defined on it. Here are three useful methods:
+
+- `Object.prototype.toString()`: returns a string representation of the object
+- `Object.prototype.isPrototypeOf(obj)`: tests if the object is in another object's prototype chain
+- `Object.prototype.hasOwnProperty(prop)`: tests whether the property is defined on the object itself
+
+Consult the MDN docs for more in on [Object.prototype](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
