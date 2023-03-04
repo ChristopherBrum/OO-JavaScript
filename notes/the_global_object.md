@@ -1,4 +1,4 @@
-# The Global Variable
+# The Global Object
 
 JS creates a **global object** at runtime which serves as the _implicit execution context_. In the browser, the global variable is the `window` object. _Global variables_ such as `NaN` and `Infinity`, and _global functions_ such as `isFinite` and `parseInt` all live in this object. You can even add custom properties to the global object:
 
