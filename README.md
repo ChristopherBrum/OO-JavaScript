@@ -23,3 +23,5 @@
   - [Object Creation Patterns](/notes/object_creation_patterns.md)
   - [Object's and Prototypes](/notes/object_and_prototypes.md)
   - [Prototypal Inheritance & Behavior Delegation](/notes/prototypal_inheritance_and_behavior_delegation.md)
+  - [COnstructor Function](/notes/constructor_function.md)
+  
