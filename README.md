@@ -26,3 +26,5 @@
   - [Prototypal Inheritance & Behavior Delegation](/notes/object_creation_patterns/prototypal_inheritance_and_behavior_delegation.md)
   - [Constructor Function](/notes/object_creation_patterns/constructor_function.md)
   - [Instance & Static Properties & Methods](/notes/object_creation_patterns/instance_and_static_properties_and_methods.md)
+  - [The Class Syntactic Sugar](/notes/object_creation_patterns/class_syntactic_sugar.md)
+  
