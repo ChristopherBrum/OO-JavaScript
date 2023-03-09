@@ -32,7 +32,7 @@ class Doctor extends Person {
   }
  
   diagnose() {
-    console.log("Diagnosing");
+    console.l og("Diagnosing");
   }
 }
 
