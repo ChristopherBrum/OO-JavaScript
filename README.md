@@ -1,4 +1,6 @@
-# JS225
+# OO JavaScript
+
+Notes on Object-Oriented JavaScript
 
 ## Table of Contents
 
